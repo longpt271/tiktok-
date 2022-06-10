@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 
+import Button from '~/components/Button';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
@@ -15,7 +16,7 @@ function Header() {
 
     useEffect(() => {
         setTimeout(() => {
-            setSearchResult([1, 2, 3]);
+            setSearchResult([]);
         }, 0);
     }, []);
 
@@ -52,8 +53,30 @@ function Header() {
                     </div>
                 </Tippy>
                 <div className={cx('actions')}>
-                    <button>Upload</button>
-                    <button>Login</button>
+                    <Button text>Upload</Button>
+                    <Button primary>Login</Button>
+                    {/* <Button primary leftIcon={<FontAwesomeIcon icon={faSignIn} />}>
+                        Login
+                    </Button> */}
+                    {/* <Button rounded>Get app</Button>
+                    <Button rounded className={cx('custom-login')}>
+                        Login
+                    </Button> */}
+                    {/* <Button primary rounded>
+                        Get app
+                    </Button>
+                    <Button outline rounded>
+                        Get app
+                    </Button> */}
+                    <Button primary disabled onClick={() => alert('Cliecked')} onMouseUp={() => {}}>
+                        Login
+                    </Button>
+                    {/* <Button outline small>
+                        Follow
+                    </Button> */}
+                    {/* <Button outline large>
+                        Login
+                    </Button> */}
                 </div>
             </div>
         </header>

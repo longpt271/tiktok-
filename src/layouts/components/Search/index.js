@@ -29,7 +29,7 @@ function Search() {
             return;
         }
 
-        const featchApi = async () => {
+        const fetchApi = async () => {
             setLoading(true);
 
             const result = await searchServices.search(debounced);
@@ -37,7 +37,7 @@ function Search() {
             setLoading(false);
         };
 
-        featchApi();
+        fetchApi();
     }, [debounced]);
 
     const handleClear = () => {
